@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenny Tejada | Desarrollador Web</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <span>Kenny</span>Tejada
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="inicio">
+        <div id="particles-js"></div>
+        <div class="hero-contenido">
+            <p class="saludo">Hola, soy</p>
+            <h1><span class="nombre-destacado">Kenny Tejada.</span></h1>
+            <p class="descripcion">Estudiante Profesional en Desarrollo de Sistemas Front-End y Back-End.</p>
+            <a href="#proyectos" class="btn-principal">Ver mi trabajo ↓</a>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+        <h2 class="titulo-seccion">Sobre mí</h2>
+        <div class="sobre-mi-contenido">
+            <div class="sobre-mi-texto">
+                <p>Soy Kenny Tejada, estudiante de Desarrollo de Sistemas de Lima, Perú.</p>
+                <p>Me apasiona crear interfaces web modernas y funcionales.</p>
+                <p>Actualmente aprendiendo HTML, CSS, JavaScript y próximamente React.</p>
+            </div>
+            <div class="habilidades">
+                <h3>Mis habilidades:</h3>
+                <div class="skills">
+                    <span class="skill">HTML5</span>
+                    <span class="skill">CSS3</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Responsive Design</span>
+                    <span class="skill">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+        <h2 class="titulo-seccion">Mis Proyectos</h2>
+        <div class="proyectos-grid">
+            <div class="proyecto-card">
+                <h3>App Pokémon</h3>
+                <p>Buscador de Pokémon usando la PokeAPI con LocalStorage para favoritos.</p>
+                <div class="proyecto-tecnologias">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>API</span>
+                </div>
+                <a href="#" class="btn-proyecto">Ver proyecto</a>
+            </div>
+            <div class="proyecto-card">
+                <h3>Página Responsive</h3>
+                <p>Página web responsive con Flexbox y Media Queries.</p>
+                <div class="proyecto-tecnologias">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Flexbox</span>
+                </div>
+                <a href="#" class="btn-proyecto">Ver proyecto</a>
+            </div>
+            <div class="proyecto-card">
+                <h3>Formulario de Contacto</h3>
+                <p>Formulario con validación en JavaScript.</p>
+                <div class="proyecto-tecnologias">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <a href="#" class="btn-proyecto">Ver proyecto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <h2 class="titulo-seccion">Contacto</h2>
+        <form id="form-contacto">
+            <input type="text" id="contact-nombre" name="name" placeholder="Tu nombre" required>
+            <input type="email" id="contact-email" name="email" placeholder="Tu email" required>
+            <textarea id="contact-mensaje" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Kenny Tejada</p>
+        <div class="redes">
+            <a href="https://www.linkedin.com/in/kenny-tejada-arevalo-937a11371/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/KennyTejada" target="_blank">GitHub</a>
+        </div>
+    </footer>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
