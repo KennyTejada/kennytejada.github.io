@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenny Tejada | Desarrollador Web</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
     <!-- NAVEGACIÓN -->
     <nav id="navbar">
-        <div class="nav-logo">
-            <span>Kenny</span>Tejada
-        </div>
         <ul class="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -33,21 +31,39 @@
 
     <!-- SOBRE MÍ -->
     <section id="sobre-mi">
-        <h2 class="titulo-seccion">Sobre mí</h2>
+        <h2 class="titulo-seccion animate">Sobre mí</h2>
         <div class="sobre-mi-contenido">
-            <div class="sobre-mi-texto">
+            <div class="sobre-mi-foto animate-izquierda">
+                <img src="img/foto.png" alt="Kenny Tejada">
+            </div>
+            <div class="sobre-mi-texto animate-derecha">
                 <p>Soy Kenny Tejada, estudiante de Desarrollo de Sistemas de Lima, Perú.</p>
                 <p>Me apasiona crear interfaces web modernas y funcionales.</p>
                 <p>Actualmente aprendiendo HTML, CSS, JavaScript y próximamente React.</p>
             </div>
-            <div class="habilidades">
+            <div class="habilidades animate-derecha">
                 <h3>Mis habilidades:</h3>
                 <div class="skills">
-                    <span class="skill">HTML5</span>
-                    <span class="skill">CSS3</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">Responsive Design</span>
-                    <span class="skill">Git</span>
+                    <div class="skill">
+                        <i class="devicon-html5-plain colored"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-css3-plain colored"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-javascript-plain colored"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-git-plain colored"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-github-original colored"></i>
+                        <span>GitHub</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,9 +71,9 @@
 
     <!-- PROYECTOS -->
     <section id="proyectos">
-        <h2 class="titulo-seccion">Mis Proyectos</h2>
+        <h2 class="titulo-seccion animate">Mis Proyectos</h2>
         <div class="proyectos-grid">
-            <div class="proyecto-card">
+            <div class="proyecto-card animate">
                 <h3>App Pokémon</h3>
                 <p>Buscador de Pokémon usando la PokeAPI con LocalStorage para favoritos.</p>
                 <div class="proyecto-tecnologias">
@@ -68,7 +84,7 @@
                 </div>
                 <a href="#" class="btn-proyecto">Ver proyecto</a>
             </div>
-            <div class="proyecto-card">
+            <div class="proyecto-card animate">
                 <h3>Página Responsive</h3>
                 <p>Página web responsive con Flexbox y Media Queries.</p>
                 <div class="proyecto-tecnologias">
@@ -78,7 +94,7 @@
                 </div>
                 <a href="#" class="btn-proyecto">Ver proyecto</a>
             </div>
-            <div class="proyecto-card">
+            <div class="proyecto-card animate">
                 <h3>Formulario de Contacto</h3>
                 <p>Formulario con validación en JavaScript.</p>
                 <div class="proyecto-tecnologias">
@@ -93,8 +109,8 @@
 
     <!-- CONTACTO -->
     <section id="contacto">
-        <h2 class="titulo-seccion">Contacto</h2>
-        <form id="form-contacto">
+        <h2 class="titulo-seccion animate">Contacto</h2>
+        <form id="form-contacto" class="animate">
             <input type="text" id="contact-nombre" name="name" placeholder="Tu nombre" required>
             <input type="email" id="contact-email" name="email" placeholder="Tu email" required>
             <textarea id="contact-mensaje" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
@@ -110,6 +126,7 @@
             <a href="https://github.com/KennyTejada" target="_blank">GitHub</a>
         </div>
     </footer>
+
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>

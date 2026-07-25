@@ -31,11 +31,12 @@ body {
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 20px 50px;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.5); 
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 .nav-logo {
@@ -179,12 +180,35 @@ section {
     gap: 10px;
 }
 
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 .skill {
-    padding: 8px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
     border: 1px solid var(--color-primario);
-    color: var(--color-primario);
-    border-radius: 20px;
+    border-radius: 10px;
+    gap: 8px;
+    transition: transform 0.3s;
+    min-width: 80px;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+}
+
+.skill i {
+    font-size: 40px;
+}
+
+.skill span {
     font-size: 14px;
+    color: var(--color-texto-gris);
 }
 
 /* ===== PROYECTOS ===== */
@@ -352,4 +376,47 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+}
+/* ===== FOTO DE PERFIL ===== */
+.sobre-mi-foto img {
+    width: 250px;
+    height: auto; /* ← altura automática para no cortar */
+    object-fit: contain; /* ← muestra la imagen completa */
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(231, 76, 60, 0.5),
+                0 0 50px rgba(231, 76, 60, 0.3),
+                0 0 75px rgba(231, 76, 60, 0.1);
+}
+/* ===== ANIMACIONES SCROLL ===== */
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-izquierda {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-izquierda.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-derecha {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-derecha.visible {
+    opacity: 1;
+    transform: translateX(0);
 }

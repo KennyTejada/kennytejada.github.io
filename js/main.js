@@ -60,3 +60,15 @@ particlesJS("particles-js", {
         }
     }
 });
+
+// Animaciones al hacer scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+// Animaciones al hacer scroll
+document.querySelectorAll('.animate, .animate-izquierda, .animate-derecha')
+    .forEach(el => observer.observe(el));
