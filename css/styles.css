@@ -6,7 +6,7 @@
 }
 
 :root {
-  --color-primario: #e74c3c;
+  --color-primario: #cc2b2b;
   --color-fondo: #0a0a0a;
   --color-fondo-2: #111111;
   --color-texto: #ffffff;
@@ -231,10 +231,6 @@ section {
   height: auto;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow:
-    0 0 25px rgba(231, 76, 60, 0.5),
-    0 0 50px rgba(231, 76, 60, 0.3),
-    0 0 75px rgba(231, 76, 60, 0.1);
 }
 
 /* ===== PROYECTOS ===== */
@@ -257,9 +253,13 @@ section {
   border-radius: 10px;
   width: 300px;
   border-top: 3px solid var(--color-primario);
-  transition: transform 0.3s;
   position: relative;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.3s ease;
 }
 
 .proyecto-card:hover {
@@ -286,6 +286,9 @@ section {
 }
 
 .proyecto-tecnologias span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 4px 12px;
   background-color: rgba(231, 76, 60, 0.2);
   color: var(--color-primario);
@@ -293,20 +296,62 @@ section {
   font-size: 12px;
 }
 
+.proyecto-tecnologias span i {
+  font-size: 14px; /* Tamaño adecuado del icono */
+}
+
+/* Alineación e icono para los botones */
 .btn-proyecto {
-  display: inline-block;
-  padding: 8px 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Espacio entre el icono de la web/GitHub y el texto */
+  padding: 10px 20px;
   border: 1px solid var(--color-primario);
   color: var(--color-primario);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 14px;
-  transition: all 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-proyecto i {
+  font-size: 16px;
 }
 
 .btn-proyecto:hover {
   background-color: var(--color-primario);
   color: white;
+}
+
+.proyecto-imagen {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.proyecto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.proyecto-card:hover .proyecto-imagen img {
+  transform: scale(1.05);
+}
+
+.proyecto-botones {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.proyecto-botones .btn-proyecto {
+  flex: 1;
 }
 
 /* LISTÓN ESTILO CINE */
@@ -379,7 +424,7 @@ section {
 }
 
 #form-contacto button:hover {
-  background-color: #c0392b;
+  background-color: #e63939;
 }
 
 /* ===== FOOTER ===== */
