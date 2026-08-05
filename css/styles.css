@@ -550,3 +550,11 @@ footer {
     width: 100%;
   }
 }
+
+.icon-api-img {
+  width: 1.4em;
+  height: 1.4em;
+  vertical-align: middle;
+  margin-right: 6px; /* Espaciado entre la imagen y el texto REST API */
+  object-fit: contain;
+}
