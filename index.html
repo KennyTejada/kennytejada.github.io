@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kenny Tejada | Desarrollador Web</title>
+
+    <!-- SEO básico -->
+    <meta
+      name="description"
+      content="Portafolio de Kenny Tejada, desarrollador web Front-End y Back-End. Proyectos, habilidades y contacto."
+    />
+    <meta name="author" content="Kenny Tejada" />
+
+    <!-- Open Graph (vista previa al compartir en redes) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kenny Tejada | Desarrollador Web" />
+    <meta
+      property="og:description"
+      content="Portafolio de Kenny Tejada, desarrollador web Front-End y Back-End."
+    />
+    <meta property="og:image" content="img/foto.png" />
+    <meta property="og:locale" content="es_PE" />
+
     <link rel="stylesheet" href="css/styles.css" />
     <link
       rel="stylesheet"
@@ -142,10 +160,23 @@
         <!-- Tarjeta 1: Tapicería -->
         <div class="proyecto-card animate">
           <div class="proyecto-imagen">
-            <img
-              src="img\logotipo-de-tapiceria.png"
-              alt="Página Web Tapicería"
-            />
+            <!--
+              Nota: quité el atributo "poster" porque el archivo
+              img/captura-preview.jpg todavía no existe en el proyecto
+              (no aparecía en tu árbol de archivos). Si generas esa imagen
+              más adelante (por ejemplo, un frame del propio video), vuelve
+              a agregar poster="img/captura-preview.jpg" aquí abajo.
+            -->
+            <video
+              class="project-preview"
+              src="vid/Captura1.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            >
+              Tu navegador no soporta el elemento de video.
+            </video>
           </div>
 
           <h3>Landing Page · Tapicería</h3>
@@ -199,12 +230,20 @@
               />REST API
             </span>
           </div>
-          <a href="#" class="btn-proyecto btn-disabled">
-            <i class="fa-solid fa-globe"></i> Ver proyecto
-          </a>
-          <a href="#" class="btn-proyecto btn-disabled">
-            <i class="devicon-github-original"></i> Ver código
-          </a>
+          <!--
+            Antes eran <a href="#">, lo que permitía que el teclado
+            (Tab + Enter) "activara" un link que no lleva a ningún lado.
+            Con <span> + aria-disabled ya no son enfocables ni activables,
+            y sigue siendo claro visualmente que están desactivados.
+          -->
+          <span class="proyecto-botones-disabled">
+            <span class="btn-proyecto btn-disabled" aria-disabled="true">
+              <i class="fa-solid fa-globe"></i> Ver proyecto
+            </span>
+            <span class="btn-proyecto btn-disabled" aria-disabled="true">
+              <i class="devicon-github-original"></i> Ver código
+            </span>
+          </span>
         </div>
       </div>
     </section>
@@ -213,27 +252,39 @@
     <section id="contacto">
       <h2 class="titulo-seccion animate">Contacto</h2>
       <form id="form-contacto" class="animate">
-        <input
-          type="text"
-          id="contact-nombre"
-          name="name"
-          placeholder="Tu nombre"
-          required
-        />
-        <input
-          type="email"
-          id="contact-email"
-          name="email"
-          placeholder="Tu email"
-          required
-        />
-        <textarea
-          id="contact-mensaje"
-          name="message"
-          placeholder="Tu mensaje"
-          rows="5"
-          required
-        ></textarea>
+        <div class="campo-formulario">
+          <label for="contact-nombre" class="sr-only">Tu nombre</label>
+          <input
+            type="text"
+            id="contact-nombre"
+            name="name"
+            placeholder="Tu nombre"
+            required
+          />
+        </div>
+
+        <div class="campo-formulario">
+          <label for="contact-email" class="sr-only">Tu email</label>
+          <input
+            type="email"
+            id="contact-email"
+            name="email"
+            placeholder="Tu email"
+            required
+          />
+        </div>
+
+        <div class="campo-formulario">
+          <label for="contact-mensaje" class="sr-only">Tu mensaje</label>
+          <textarea
+            id="contact-mensaje"
+            name="message"
+            placeholder="Tu mensaje"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+
         <button type="submit">Enviar mensaje</button>
       </form>
     </section>
@@ -245,11 +296,22 @@
         <a
           href="https://www.linkedin.com/in/kenny-tejada-arevalo-937a11371/"
           target="_blank"
+          rel="noopener noreferrer"
           >LinkedIn</a
         >
-        <a href="https://github.com/KennyTejada" target="_blank">GitHub</a>
+        <a
+          href="https://github.com/KennyTejada"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
         <a href="mailto:kennytejada1@outlook.es">Correo</a>
-        <a href="https://wa.me/51933664390" target="_blank">WhatsApp</a>
+        <a
+          href="https://wa.me/51933664390"
+          target="_blank"
+          rel="noopener noreferrer"
+          >WhatsApp</a
+        >
       </div>
     </footer>
 

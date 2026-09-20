@@ -8,6 +8,8 @@ document
     e.preventDefault();
 
     let btn = this.querySelector("button");
+    let textoOriginal = btn.textContent;
+
     btn.textContent = "Enviando...";
     btn.disabled = true;
 
@@ -16,12 +18,29 @@ document
       .then(function () {
         btn.textContent = "¡Mensaje enviado! ✅";
         document.getElementById("form-contacto").reset();
+
+        // Vuelve al texto original después de unos segundos,
+        // para que el formulario quede listo por si el usuario
+        // quiere enviar otro mensaje.
+        setTimeout(function () {
+          btn.textContent = textoOriginal;
+          btn.disabled = false;
+        }, 3000);
       })
       .catch(function (error) {
         btn.textContent = "Error al enviar ❌";
         console.log(error);
+
+        // Antes el botón se quedaba deshabilitado para siempre si el
+        // envío fallaba, y el usuario no podía volver a intentarlo.
+        btn.disabled = false;
+
+        setTimeout(function () {
+          btn.textContent = textoOriginal;
+        }, 3000);
       });
   });
+
 // Efecto de particulas
 particlesJS("particles-js", {
   particles: {
@@ -75,7 +94,7 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.1 },
 );
-// Animaciones al hacer scroll
+
 document
   .querySelectorAll(".animate, .animate-izquierda, .animate-derecha")
   .forEach((el) => observer.observe(el));

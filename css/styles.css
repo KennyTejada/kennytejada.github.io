@@ -25,6 +25,21 @@ body {
   line-height: 1.6;
 }
 
+/* Clase utilitaria: oculta visualmente pero mantiene el texto
+   accesible para lectores de pantalla (usada en los <label> del
+   formulario, que ya usan placeholder como pista visual). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ===== NAVEGACIÓN ===== */
 #navbar {
   position: fixed;
@@ -37,16 +52,6 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   backdrop-filter: blur(5px);
-}
-
-.nav-logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--color-primario);
-}
-
-.nav-logo span {
-  color: var(--color-primario);
 }
 
 .nav-links {
@@ -333,6 +338,10 @@ section {
   margin-bottom: 15px;
 }
 
+/* Antes esta regla solo apuntaba a "img", por lo que no se aplicaba
+   al <video class="project-preview"> que reemplazó a la imagen del
+   proyecto de tapicería. Ahora cubre ambos casos. */
+.proyecto-imagen video,
 .proyecto-imagen img {
   width: 100%;
   height: 100%;
@@ -340,17 +349,20 @@ section {
   transition: transform 0.3s ease;
 }
 
+.proyecto-card:hover .proyecto-imagen video,
 .proyecto-card:hover .proyecto-imagen img {
   transform: scale(1.05);
 }
 
-.proyecto-botones {
+.proyecto-botones,
+.proyecto-botones-disabled {
   display: flex;
   gap: 10px;
   margin-top: auto;
 }
 
-.proyecto-botones .btn-proyecto {
+.proyecto-botones .btn-proyecto,
+.proyecto-botones-disabled .btn-proyecto {
   flex: 1;
 }
 
@@ -380,7 +392,6 @@ section {
 .btn-disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  pointer-events: none;
 }
 
 /* ===== CONTACTO ===== */
@@ -396,6 +407,11 @@ section {
   gap: 20px;
 }
 
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+}
+
 #form-contacto input,
 #form-contacto textarea {
   padding: 15px;
@@ -404,6 +420,7 @@ section {
   border-radius: 5px;
   color: var(--color-texto);
   font-size: 16px;
+  width: 100%;
 }
 
 #form-contacto input:focus,
@@ -425,6 +442,11 @@ section {
 
 #form-contacto button:hover {
   background-color: #e63939;
+}
+
+#form-contacto button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 /* ===== FOOTER ===== */
